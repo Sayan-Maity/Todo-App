@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Rubik+Vinyl&family=Rubik:wght@400;500;700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(23, 23, 35);
+    flex-direction: column;
+}
+p.appName {
+    color: rgb(101, 106, 152);
+    font-family: 'Rubik Vinyl', cursive;
+    font-weight: 500;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    letter-spacing: 2px;
+    word-spacing: 10px;
+    align-items: center;
+    display: flex;
+}
+p.appName span {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+}
+.todo-container {
+    width: 1000px;
+    display: flex;
+}
+
+.status {
+    width: 25%;
+    background-color: rgb(29, 31, 48);
+    position: relative;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    min-height: 30rem;
+    border: 1ps solid transparent;
+}
+
+
+.status:nth-child(even) {
+    background-color: rgb(27, 28, 43);
+}
+
+.status p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(23, 23, 35);
+    /* background-color:red; */
+    padding-bottom: 2rem;
+    color: rgb(101, 106, 152);
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+.status p span {
+    padding-right: 0.5rem;
+}
+  
+  #add_btn {
+    padding: 0.5rem 1rem;
+    border: 2px dashed  rgb(42, 44, 67);
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    cursor: pointer;
+    color: rgb(42, 44, 67);
+    transition: background-color 0.1s ease-in;
+  }
+  
+  #add_btn:hover {
+    /* background-color: #aaa; */
+    background-color: rgb(26, 27, 45);
+
+  }
+  
+  .todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: rgb(42, 44, 67);
+    color: rgb(204, 204, 204);
+
+    box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+      rgba(15, 15, 15, 0.1) 0px 2px 4px;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    width: auto;
+    padding-right: 2.5rem !important;
+    padding-top: 0.5rem;
+    padding-left: 0.8rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .todo .close {
+    position: absolute;
+    right: 0.8rem;
+    top: 0rem;
+    font-size: 1.6rem;
+    color: rgb(24, 25, 38);
+    cursor: pointer;
+    transition: color 0.1s ease-in;
+    font-weight: 500;
+}
+
+.todo .close:hover {
+    color: rgb(132, 132, 132);
+
+}
+  
+  /* modal */
+  
+  .close-modal {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+  }
+  
+  .modal {
+    width: 450px;
+    position: fixed;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top 0.3s ease-in-out;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 2;
+    background-color: #fff;
+  }
+  
+  .modal.active {
+    top: 15%;
+  }
+  
+  .modal .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .modal .body {
+    padding: 0.75rem;
+  }
+  
+  #overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  #overlay.active {
+    display: block;
+  }
+  
+  #todo_input,
+  #todo_submit {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    margin: 0.25rem;
+  }
+  
+  #todo_submit {
+    background-color: #4caf50;
+    color: #f3f3f3;
+    font-size: 1.25rem;
+    border: none;
+  }
+
+  footer {
+    /* background-color: #fff; */
+    width: 100%;
+    bottom: 0 !important;
+    position: absolute;
+    display: flex;
+    padding-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+    color: rgb(48, 51, 79);
+}
+.footer p {
+    display: flex;
+    align-items: center;
+    
+}
+.footer p span {
+    padding: 0 0.5rem;
+}
+.footer p a{
+    text-decoration: none;
+    color: rgb(48, 51, 79);
+    padding: 0.3rem;
+}
+.footer p a:hover {
+    text-decoration: underline;
+}
